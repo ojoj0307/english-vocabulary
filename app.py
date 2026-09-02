@@ -20,7 +20,6 @@ st.set_page_config(
 
 # ============================================================
 # 数据文件
-#
 # 永远放在 app.py 所在的文件夹
 # ============================================================
 
@@ -42,7 +41,7 @@ st.markdown("""
 <style>
 
 .block-container {
-    padding-top: 0.6rem;
+    padding-top: 2.5rem;
     padding-bottom: 0.5rem;
     max-width: 1150px;
 }
@@ -93,6 +92,10 @@ div.stButton > button {
 }
 
 @media (max-width: 700px) {
+
+    .block-container {
+        padding-top: 2.5rem;
+    }
 
     .question {
         font-size: 25px;
@@ -158,27 +161,22 @@ def load_words():
 
                 if "english" not in word:
                     word["english"] = ""
-
                     changed = True
 
                 if "chinese" not in word:
                     word["chinese"] = ""
-
                     changed = True
 
                 if "weight" not in word:
                     word["weight"] = 3
-
                     changed = True
 
                 if "correct" not in word:
                     word["correct"] = 0
-
                     changed = True
 
                 if "wrong" not in word:
                     word["wrong"] = 0
-
                     changed = True
 
             if changed:
@@ -1155,6 +1153,19 @@ elif page == "🎯 开始练习":
             if submitted:
 
                 answer = answer.strip()
+
+
+                # ==========================================
+                # ★ 答案不能为空
+                # ==========================================
+
+                if not answer:
+
+                    st.warning(
+                        "请输入答案后再提交。"
+                    )
+
+                    st.stop()
 
 
                 # ==========================================
