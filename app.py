@@ -827,7 +827,7 @@ if page == "📚 词库管理":
                 item.get("category", "noun")
                 == category
                 for item in words
-            )
+                )
 
                     duplicate += 1
 
