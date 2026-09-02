@@ -1,4 +1,3 @@
-```python
 import streamlit as st
 import json
 import random
@@ -1770,4 +1769,3 @@ elif page == "🎯 开始练习":
             "今日正确",
             today_correct
         )
-```
