@@ -818,12 +818,16 @@ if page == "📚 词库管理":
             ):
 
                 exists = any(
-                    item["english"].strip().lower()
-                    == english.strip().lower()
-                    for item in words
-                )
-
-                if exists:
+                item["english"].strip().lower()
+                == english.strip().lower()
+                and
+                item["chinese"].strip()
+                == chinese.strip()
+                and
+                item.get("category", "noun")
+                == category
+                for item in words
+            )
 
                     duplicate += 1
 
