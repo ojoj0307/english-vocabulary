@@ -1,3 +1,4 @@
+```python
 import streamlit as st
 import json
 import random
@@ -462,8 +463,6 @@ def save_daily_stats(data):
 
 # ============================================================
 # 读取每日统计
-#
-# 日期改变后自动清零
 # ============================================================
 
 def load_daily_stats():
@@ -490,8 +489,9 @@ def load_daily_stats():
                 "correct": 0
             }
 
+
         # ====================================================
-        # 日期变化
+        # 日期改变 → 自动清零
         # ====================================================
 
         if data.get("date") != today:
@@ -503,6 +503,7 @@ def load_daily_stats():
             }
 
             save_daily_stats(data)
+
 
         return data
 
@@ -812,22 +813,33 @@ if page == "📚 词库管理":
             added = 0
             duplicate = 0
 
+
             for english, chinese in zip(
                 english_list,
                 chinese_list
             ):
 
+                # ==================================================
+                # ★ 重复判断
+                #
+                # 英文 + 中文 + 词性
+                # 三项全部相同才算重复
+                # ==================================================
+
                 exists = any(
-                item["english"].strip().lower()
-                == english.strip().lower()
-                and
-                item["chinese"].strip()
-                == chinese.strip()
-                and
-                item.get("category", "noun")
-                == category
-                for item in words
+                    item["english"].strip().lower()
+                    == english.strip().lower()
+                    and
+                    item["chinese"].strip()
+                    == chinese.strip()
+                    and
+                    item.get("category", "noun")
+                    == category
+                    for item in words
                 )
+
+
+                if exists:
 
                     duplicate += 1
 
@@ -856,7 +868,7 @@ if page == "📚 词库管理":
                 if duplicate:
 
                     st.info(
-                        f"{duplicate} 个重复单词没有添加。"
+                        f"{duplicate} 个完全相同的单词没有添加。"
                     )
 
 
@@ -897,6 +909,7 @@ if page == "📚 词库管理":
 
             col1, col2 = st.columns(2)
 
+
             with col1:
 
                 new_english = st.text_input(
@@ -904,6 +917,7 @@ if page == "📚 词库管理":
                     value=word["english"],
                     key=f"edit_en_{index}"
                 )
+
 
             with col2:
 
@@ -937,6 +951,7 @@ if page == "📚 词库管理":
 
             col1, col2 = st.columns(2)
 
+
             with col1:
 
                 if st.button(
@@ -956,6 +971,7 @@ if page == "📚 词库管理":
                     word["category"] = (
                         new_category
                     )
+
 
                     if save_words():
 
@@ -991,6 +1007,7 @@ elif page == "📖 查看词库":
 
     st.header("📖 我的词库")
 
+
     if not words:
 
         st.info(
@@ -1006,6 +1023,7 @@ elif page == "📖 查看词库":
 
 
         filtered_words = []
+
 
         for word in words:
 
@@ -1033,6 +1051,7 @@ elif page == "📖 查看词库":
             [2, 2, 1.2, 1, 1.3, 0.7, 0.7]
         )
 
+
         col1.write("**英文**")
         col2.write("**中文**")
         col3.write("**词性**")
@@ -1040,6 +1059,7 @@ elif page == "📖 查看词库":
         col5.write("**概率**")
         col6.write("**✓**")
         col7.write("**✗**")
+
 
         st.divider()
 
@@ -1148,6 +1168,7 @@ elif page == "🎯 开始练习":
 
             selected_word = get_random_word()
 
+
             if selected_word is not None:
 
                 st.session_state.current_word_index = (
@@ -1196,6 +1217,7 @@ elif page == "🎯 开始练习":
                 "### 上一题"
             )
 
+
             last_index = (
                 st.session_state.last_word_index
             )
@@ -1207,11 +1229,13 @@ elif page == "🎯 开始练习":
                     "开始答题后显示上一题"
                 )
 
+
             elif last_index >= len(words):
 
                 st.caption(
                     "上一题不存在"
                 )
+
 
             else:
 
@@ -1397,7 +1421,8 @@ elif page == "🎯 开始练习":
                         save_words()
 
 
-                        # 同时修正今日统计
+                        # 更新今日统计
+
                         daily_stats["correct"] = (
                             int(
                                 daily_stats.get(
@@ -1517,7 +1542,7 @@ elif page == "🎯 开始练习":
 
 
                 # ==========================================
-                # ★ 答案不能为空
+                # 答案不能为空
                 # ==========================================
 
                 if not answer:
@@ -1606,7 +1631,7 @@ elif page == "🎯 开始练习":
 
 
                 # ==========================================
-                # 保存单词永久数据
+                # 永久保存
                 # ==========================================
 
                 save_success = save_words()
@@ -1745,3 +1770,4 @@ elif page == "🎯 开始练习":
             "今日正确",
             today_correct
         )
+```
