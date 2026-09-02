@@ -4,6 +4,8 @@ import random
 import os
 import base64
 import html
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 
 # ============================================================
@@ -20,6 +22,7 @@ st.set_page_config(
 
 # ============================================================
 # 数据文件
+#
 # 永远放在 app.py 所在的文件夹
 # ============================================================
 
@@ -31,6 +34,27 @@ DATA_FILE = os.path.join(
     BASE_DIR,
     "vocabulary.json"
 )
+
+
+# ============================================================
+# 每日统计文件
+#
+# 每天 00:00 自动重置
+# ============================================================
+
+DAILY_STATS_FILE = os.path.join(
+    BASE_DIR,
+    "daily_stats.json"
+)
+
+
+# ============================================================
+# 时区
+#
+# 马来西亚时间 UTC+8
+# ============================================================
+
+MALAYSIA_TZ = ZoneInfo("Asia/Kuala_Lumpur")
 
 
 # ============================================================
@@ -240,7 +264,7 @@ def save_words_to_file(data):
 
 
 # ============================================================
-# 每次启动读取
+# 每次启动读取词库
 # ============================================================
 
 words = load_words()
@@ -253,6 +277,157 @@ words = load_words()
 def save_words():
 
     return save_words_to_file(words)
+
+
+# ============================================================
+# 每日统计
+# ============================================================
+
+def get_today():
+
+    return datetime.now(
+        MALAYSIA_TZ
+    ).strftime("%Y-%m-%d")
+
+
+# ============================================================
+# 创建每日统计文件
+# ============================================================
+
+def create_daily_stats_file():
+
+    if not os.path.exists(DAILY_STATS_FILE):
+
+        today = get_today()
+
+        data = {
+            "date": today,
+            "answered": 0,
+            "correct": 0
+        }
+
+        with open(
+            DAILY_STATS_FILE,
+            "w",
+            encoding="utf-8"
+        ) as f:
+
+            json.dump(
+                data,
+                f,
+                ensure_ascii=False,
+                indent=4
+            )
+
+
+# ============================================================
+# 读取每日统计
+#
+# 如果日期变了：
+# 自动重置
+# ============================================================
+
+def load_daily_stats():
+
+    create_daily_stats_file()
+
+    today = get_today()
+
+    try:
+
+        with open(
+            DAILY_STATS_FILE,
+            "r",
+            encoding="utf-8"
+        ) as f:
+
+            data = json.load(f)
+
+        if not isinstance(data, dict):
+
+            data = {
+                "date": today,
+                "answered": 0,
+                "correct": 0
+            }
+
+        # ====================================================
+        # ★ 日期变化
+        # 自动重置
+        # ====================================================
+
+        if data.get("date") != today:
+
+            data = {
+                "date": today,
+                "answered": 0,
+                "correct": 0
+            }
+
+            save_daily_stats(data)
+
+        return data
+
+    except Exception as e:
+
+        st.error(
+            f"读取每日统计失败：{e}"
+        )
+
+        return {
+            "date": today,
+            "answered": 0,
+            "correct": 0
+        }
+
+
+# ============================================================
+# 保存每日统计
+# ============================================================
+
+def save_daily_stats(data):
+
+    temp_file = DAILY_STATS_FILE + ".tmp"
+
+    try:
+
+        with open(
+            temp_file,
+            "w",
+            encoding="utf-8"
+        ) as f:
+
+            json.dump(
+                data,
+                f,
+                ensure_ascii=False,
+                indent=4
+            )
+
+            f.flush()
+            os.fsync(f.fileno())
+
+        os.replace(
+            temp_file,
+            DAILY_STATS_FILE
+        )
+
+        return True
+
+    except Exception as e:
+
+        st.error(
+            f"保存每日统计失败：{e}"
+        )
+
+        return False
+
+
+# ============================================================
+# 初始化今日统计
+# ============================================================
+
+daily_stats = load_daily_stats()
 
 
 # ============================================================
@@ -309,26 +484,6 @@ def get_random_word():
         weights=weights,
         k=1
     )[0]
-
-
-# ============================================================
-# 永久统计
-# ============================================================
-
-def get_total_correct():
-
-    return sum(
-        int(word.get("correct", 0))
-        for word in words
-    )
-
-
-def get_total_wrong():
-
-    return sum(
-        int(word.get("wrong", 0))
-        for word in words
-    )
 
 
 # ============================================================
@@ -1245,10 +1400,44 @@ elif page == "🎯 开始练习":
 
 
                 # ==========================================
-                # ★ 立即永久保存
+                # ★ 永久保存单词数据
                 # ==========================================
 
                 save_success = save_words()
+
+
+                # ==========================================
+                # ★ 更新每日统计
+                # =================================================
+
+                # 先检查日期
+                today = get_today()
+
+                if daily_stats.get("date") != today:
+
+                    daily_stats = {
+                        "date": today,
+                        "answered": 0,
+                        "correct": 0
+                    }
+
+
+                # 答题数 +1
+                daily_stats["answered"] = (
+                    int(daily_stats.get("answered", 0)) + 1
+                )
+
+
+                # 如果答对
+                if is_correct:
+
+                    daily_stats["correct"] = (
+                        int(daily_stats.get("correct", 0)) + 1
+                    )
+
+
+                # 保存每日统计
+                save_daily_stats(daily_stats)
 
 
                 # ==========================================
@@ -1309,27 +1498,22 @@ elif page == "🎯 开始练习":
         st.divider()
 
 
-        # 重新读取文件
-        # 确保统计来自永久数据
+        # ====================================================
+        # ★ 每日统计
+        #
+        # 每天 00:00 自动重置
+        # ====================================================
 
-        saved_words = load_words()
+        daily_stats = load_daily_stats()
 
 
-        total_correct = sum(
-            int(w.get("correct", 0))
-            for w in saved_words
+        today_answered = int(
+            daily_stats.get("answered", 0)
         )
 
 
-        total_wrong = sum(
-            int(w.get("wrong", 0))
-            for w in saved_words
-        )
-
-
-        total_answered = (
-            total_correct
-            + total_wrong
+        today_correct = int(
+            daily_stats.get("correct", 0)
         )
 
 
@@ -1337,12 +1521,12 @@ elif page == "🎯 开始练习":
 
 
         col1.metric(
-            "答数",
-            total_answered
+            "今日答数",
+            today_answered
         )
 
 
         col2.metric(
-            "正确",
-            total_correct
+            "今日正确",
+            today_correct
         )
