@@ -1,3 +1,4 @@
+```python
 import streamlit as st
 import json
 import random
@@ -22,8 +23,6 @@ st.set_page_config(
 
 # ============================================================
 # 数据文件
-#
-# 永远放在 app.py 所在的文件夹
 # ============================================================
 
 BASE_DIR = os.path.dirname(
@@ -35,13 +34,6 @@ DATA_FILE = os.path.join(
     "vocabulary.json"
 )
 
-
-# ============================================================
-# 每日统计文件
-#
-# 每天 00:00 自动重置
-# ============================================================
-
 DAILY_STATS_FILE = os.path.join(
     BASE_DIR,
     "daily_stats.json"
@@ -49,12 +41,22 @@ DAILY_STATS_FILE = os.path.join(
 
 
 # ============================================================
-# 时区
-#
-# 马来西亚时间 UTC+8
+# 马来西亚时区
 # ============================================================
 
 MALAYSIA_TZ = ZoneInfo("Asia/Kuala_Lumpur")
+
+
+# ============================================================
+# 词性
+# ============================================================
+
+CATEGORIES = [
+    "noun",
+    "verb",
+    "adjective",
+    "adverb"
+]
 
 
 # ============================================================
@@ -70,6 +72,11 @@ st.markdown("""
     max-width: 1150px;
 }
 
+
+/* ==========================================================
+   标题
+   ========================================================== */
+
 h1 {
     font-size: 26px !important;
     margin-bottom: 5px !important;
@@ -83,21 +90,80 @@ h3 {
     font-size: 18px !important;
 }
 
+
+/* ==========================================================
+   Sidebar 菜单字体
+   ========================================================== */
+
+section[data-testid="stSidebar"] div[role="radiogroup"] label {
+    font-size: 19px !important;
+    font-weight: 600 !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+
+/* Sidebar 的「功能」文字 */
+
+section[data-testid="stSidebar"] p {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}
+
+
+/* ==========================================================
+   问题
+   ========================================================== */
+
 .question {
     font-size: 30px;
     font-weight: 600;
     text-align: center;
-    margin: 8px 0 12px 0;
+    margin: 8px 0 6px 0;
     word-break: break-word;
 }
+
+
+/* ==========================================================
+   问题下面的词性
+   ========================================================== */
+
+.question-category {
+    font-size: 17px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 12px;
+    opacity: 0.75;
+}
+
+
+/* ==========================================================
+   上一题
+   ========================================================== */
 
 .previous-question {
     font-size: 24px;
     font-weight: 600;
     text-align: center;
-    margin: 8px 0 12px 0;
+    margin: 8px 0 6px 0;
     word-break: break-word;
 }
+
+
+/* 上一题词性 */
+
+.previous-category {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 12px;
+    opacity: 0.75;
+}
+
+
+/* ==========================================================
+   答案文字
+   ========================================================== */
 
 .answer-text {
     font-size: 16px;
@@ -105,15 +171,30 @@ h3 {
     word-break: break-word;
 }
 
+
+/* ==========================================================
+   输入框
+   ========================================================== */
+
 div[data-testid="stTextInput"] input {
     font-size: 18px;
     height: 42px;
 }
 
+
+/* ==========================================================
+   按钮
+   ========================================================== */
+
 div.stButton > button {
     min-height: 38px;
     font-size: 15px;
 }
+
+
+/* ==========================================================
+   手机
+   ========================================================== */
 
 @media (max-width: 700px) {
 
@@ -125,8 +206,20 @@ div.stButton > button {
         font-size: 25px;
     }
 
+    .question-category {
+        font-size: 16px;
+    }
+
     .previous-question {
         font-size: 21px;
+    }
+
+    .previous-category {
+        font-size: 15px;
+    }
+
+    section[data-testid="stSidebar"] div[role="radiogroup"] label {
+        font-size: 18px !important;
     }
 
 }
@@ -178,7 +271,10 @@ def load_words():
             if not isinstance(data, list):
                 return []
 
+            # ==================================================
             # 修复旧数据
+            # ==================================================
+
             changed = False
 
             for word in data:
@@ -189,6 +285,14 @@ def load_words():
 
                 if "chinese" not in word:
                     word["chinese"] = ""
+                    changed = True
+
+                if "category" not in word:
+                    word["category"] = "noun"
+                    changed = True
+
+                if word.get("category") not in CATEGORIES:
+                    word["category"] = "noun"
                     changed = True
 
                 if "weight" not in word:
@@ -228,7 +332,6 @@ def save_words_to_file(data):
 
     try:
 
-        # 先写临时文件
         with open(
             temp_file,
             "w",
@@ -242,11 +345,9 @@ def save_words_to_file(data):
                 indent=4
             )
 
-            # 确保写入磁盘
             f.flush()
             os.fsync(f.fileno())
 
-        # 再替换正式文件
         os.replace(
             temp_file,
             DATA_FILE
@@ -264,7 +365,7 @@ def save_words_to_file(data):
 
 
 # ============================================================
-# 每次启动读取词库
+# 读取词库
 # ============================================================
 
 words = load_words()
@@ -280,7 +381,7 @@ def save_words():
 
 
 # ============================================================
-# 每日统计
+# 当前日期
 # ============================================================
 
 def get_today():
@@ -298,10 +399,8 @@ def create_daily_stats_file():
 
     if not os.path.exists(DAILY_STATS_FILE):
 
-        today = get_today()
-
         data = {
-            "date": today,
+            "date": get_today(),
             "answered": 0,
             "correct": 0
         }
@@ -318,67 +417,6 @@ def create_daily_stats_file():
                 ensure_ascii=False,
                 indent=4
             )
-
-
-# ============================================================
-# 读取每日统计
-#
-# 如果日期变了：
-# 自动重置
-# ============================================================
-
-def load_daily_stats():
-
-    create_daily_stats_file()
-
-    today = get_today()
-
-    try:
-
-        with open(
-            DAILY_STATS_FILE,
-            "r",
-            encoding="utf-8"
-        ) as f:
-
-            data = json.load(f)
-
-        if not isinstance(data, dict):
-
-            data = {
-                "date": today,
-                "answered": 0,
-                "correct": 0
-            }
-
-        # ====================================================
-        # ★ 日期变化
-        # 自动重置
-        # ====================================================
-
-        if data.get("date") != today:
-
-            data = {
-                "date": today,
-                "answered": 0,
-                "correct": 0
-            }
-
-            save_daily_stats(data)
-
-        return data
-
-    except Exception as e:
-
-        st.error(
-            f"读取每日统计失败：{e}"
-        )
-
-        return {
-            "date": today,
-            "answered": 0,
-            "correct": 0
-        }
 
 
 # ============================================================
@@ -424,7 +462,66 @@ def save_daily_stats(data):
 
 
 # ============================================================
-# 初始化今日统计
+# 读取每日统计
+#
+# 日期改变后自动清零
+# ============================================================
+
+def load_daily_stats():
+
+    create_daily_stats_file()
+
+    today = get_today()
+
+    try:
+
+        with open(
+            DAILY_STATS_FILE,
+            "r",
+            encoding="utf-8"
+        ) as f:
+
+            data = json.load(f)
+
+        if not isinstance(data, dict):
+
+            data = {
+                "date": today,
+                "answered": 0,
+                "correct": 0
+            }
+
+        # ====================================================
+        # 日期变化
+        # ====================================================
+
+        if data.get("date") != today:
+
+            data = {
+                "date": today,
+                "answered": 0,
+                "correct": 0
+            }
+
+            save_daily_stats(data)
+
+        return data
+
+    except Exception as e:
+
+        st.error(
+            f"读取每日统计失败：{e}"
+        )
+
+        return {
+            "date": today,
+            "answered": 0,
+            "correct": 0
+        }
+
+
+# ============================================================
+# 初始化每日统计
 # ============================================================
 
 daily_stats = load_daily_stats()
@@ -592,27 +689,18 @@ def pronunciation_button(text, key):
 # ============================================================
 
 if "current_word_index" not in st.session_state:
-
     st.session_state.current_word_index = None
 
-
 if "question_type" not in st.session_state:
-
     st.session_state.question_type = "中译英"
 
-
 if "last_word_index" not in st.session_state:
-
     st.session_state.last_word_index = None
 
-
 if "last_answer" not in st.session_state:
-
     st.session_state.last_answer = ""
 
-
 if "last_correct" not in st.session_state:
-
     st.session_state.last_correct = None
 
 
@@ -649,8 +737,9 @@ if page == "📚 词库管理":
 
     st.header("📚 词库管理")
 
+
     # ========================================================
-    # 添加
+    # 添加单词
     # ========================================================
 
     st.subheader("➕ 添加单词")
@@ -673,6 +762,22 @@ if page == "📚 词库管理":
             placeholder="我们\n我\n你"
         )
 
+
+    # ========================================================
+    # 选择词性
+    # ========================================================
+
+    category = st.selectbox(
+        "词性",
+        CATEGORIES,
+        index=0
+    )
+
+
+    # ========================================================
+    # 添加按钮
+    # ========================================================
+
     if st.button(
         "➕ 添加",
         use_container_width=True
@@ -689,6 +794,7 @@ if page == "📚 词库管理":
             for x in chinese_text.splitlines()
             if x.strip()
         ]
+
 
         if not english_list:
 
@@ -728,6 +834,7 @@ if page == "📚 词库管理":
                         {
                             "english": english,
                             "chinese": chinese,
+                            "category": category,
                             "weight": 3,
                             "correct": 0,
                             "wrong": 0
@@ -735,6 +842,7 @@ if page == "📚 词库管理":
                     )
 
                     added += 1
+
 
             if save_words():
 
@@ -748,7 +856,9 @@ if page == "📚 词库管理":
                         f"{duplicate} 个重复单词没有添加。"
                     )
 
+
     st.divider()
+
 
     # ========================================================
     # 编辑
@@ -760,6 +870,7 @@ if page == "📚 词库管理":
         "🔍 搜索",
         placeholder="输入英文或中文"
     )
+
 
     for index, word in enumerate(words):
 
@@ -775,8 +886,10 @@ if page == "📚 词库管理":
 
                 continue
 
+
         with st.expander(
-            f"{word['english']} → {word['chinese']}"
+            f"{word['english']} → {word['chinese']} "
+            f"({word.get('category', 'noun')})"
         ):
 
             col1, col2 = st.columns(2)
@@ -797,12 +910,27 @@ if page == "📚 词库管理":
                     key=f"edit_cn_{index}"
                 )
 
+
+            new_category = st.selectbox(
+                "词性",
+                CATEGORIES,
+                index=CATEGORIES.index(
+                    word.get("category", "noun")
+                )
+                if word.get("category", "noun")
+                in CATEGORIES
+                else 0,
+                key=f"edit_category_{index}"
+            )
+
+
             st.caption(
                 f"权重：{word['weight']}  | "
                 f"概率：{calculate_probability(word):.2f}%  | "
                 f"正确：{word['correct']}  | "
                 f"错误：{word['wrong']}"
             )
+
 
             col1, col2 = st.columns(2)
 
@@ -822,6 +950,10 @@ if page == "📚 词库管理":
                         new_chinese.strip()
                     )
 
+                    word["category"] = (
+                        new_category
+                    )
+
                     if save_words():
 
                         st.success(
@@ -829,6 +961,7 @@ if page == "📚 词库管理":
                         )
 
                         st.rerun()
+
 
             with col2:
 
@@ -868,6 +1001,7 @@ elif page == "📖 查看词库":
             placeholder="输入英文或中文"
         )
 
+
         filtered_words = []
 
         for word in words:
@@ -886,28 +1020,33 @@ elif page == "📖 查看词库":
 
                 filtered_words.append(word)
 
+
         st.caption(
             f"找到 {len(filtered_words)} 个单词"
         )
 
-        col1, col2, col3, col4, col5, col6 = st.columns(
-            [2, 2, 1, 1.3, 0.7, 0.7]
+
+        col1, col2, col3, col4, col5, col6, col7 = st.columns(
+            [2, 2, 1.2, 1, 1.3, 0.7, 0.7]
         )
 
         col1.write("**英文**")
         col2.write("**中文**")
-        col3.write("**权重**")
-        col4.write("**概率**")
-        col5.write("**✓**")
-        col6.write("**✗**")
+        col3.write("**词性**")
+        col4.write("**权重**")
+        col5.write("**概率**")
+        col6.write("**✓**")
+        col7.write("**✗**")
 
         st.divider()
 
+
         for word in filtered_words:
 
-            col1, col2, col3, col4, col5, col6 = st.columns(
-                [2, 2, 1, 1.3, 0.7, 0.7]
+            col1, col2, col3, col4, col5, col6, col7 = st.columns(
+                [2, 2, 1.2, 1, 1.3, 0.7, 0.7]
             )
+
 
             col1.write(
                 word["english"]
@@ -918,18 +1057,25 @@ elif page == "📖 查看词库":
             )
 
             col3.write(
-                word["weight"]
+                word.get(
+                    "category",
+                    "noun"
+                )
             )
 
             col4.write(
-                f"{calculate_probability(word):.2f}%"
+                word["weight"]
             )
 
             col5.write(
-                word["correct"]
+                f"{calculate_probability(word):.2f}%"
             )
 
             col6.write(
+                word["correct"]
+            )
+
+            col7.write(
                 word["wrong"]
             )
 
@@ -1018,6 +1164,16 @@ elif page == "🎯 开始练习":
 
 
         # ====================================================
+        # 当前词性
+        # ====================================================
+
+        current_category = word.get(
+            "category",
+            "noun"
+        )
+
+
+        # ====================================================
         # 左右布局
         # ====================================================
 
@@ -1041,6 +1197,7 @@ elif page == "🎯 开始练习":
                 st.session_state.last_word_index
             )
 
+
             if last_index is None:
 
                 st.caption(
@@ -1059,6 +1216,16 @@ elif page == "🎯 开始练习":
 
 
                 # ==========================================
+                # 上一题词性
+                # ==========================================
+
+                last_category = last_word.get(
+                    "category",
+                    "noun"
+                )
+
+
+                # ==========================================
                 # 中译英
                 # ==========================================
 
@@ -1069,6 +1236,12 @@ elif page == "🎯 开始练习":
                         <div class="previous-question">
                             {html.escape(
                                 last_word["chinese"]
+                            )}
+                        </div>
+
+                        <div class="previous-category">
+                            {html.escape(
+                                last_category
                             )}
                         </div>
                         """,
@@ -1123,6 +1296,12 @@ elif page == "🎯 开始练习":
                         <div class="previous-question">
                             {html.escape(
                                 last_word["english"]
+                            )}
+                        </div>
+
+                        <div class="previous-category">
+                            {html.escape(
+                                last_category
                             )}
                         </div>
                         """,
@@ -1195,28 +1374,40 @@ elif page == "🎯 开始练习":
                         use_container_width=True
                     ):
 
-                        # 撤销之前的错误
                         last_word["wrong"] = max(
                             0,
                             int(last_word["wrong"]) - 1
                         )
 
 
-                        # 增加正确
                         last_word["correct"] = (
                             int(last_word["correct"]) + 1
                         )
 
 
-                        # 降低权重
                         last_word["weight"] = max(
                             1,
                             int(last_word["weight"]) - 2
                         )
 
 
-                        # 立即保存
                         save_words()
+
+
+                        # 同时修正今日统计
+                        daily_stats["correct"] = (
+                            int(
+                                daily_stats.get(
+                                    "correct",
+                                    0
+                                )
+                            ) + 1
+                        )
+
+
+                        save_daily_stats(
+                            daily_stats
+                        )
 
 
                         st.session_state.last_correct = True
@@ -1249,6 +1440,12 @@ elif page == "🎯 开始练习":
                             word["chinese"]
                         )}
                     </div>
+
+                    <div class="question-category">
+                        {html.escape(
+                            current_category
+                        )}
+                    </div>
                     """,
                     unsafe_allow_html=True
                 )
@@ -1265,6 +1462,12 @@ elif page == "🎯 开始练习":
                     <div class="question">
                         {html.escape(
                             word["english"]
+                        )}
+                    </div>
+
+                    <div class="question-category">
+                        {html.escape(
+                            current_category
                         )}
                     </div>
                     """,
@@ -1400,18 +1603,18 @@ elif page == "🎯 开始练习":
 
 
                 # ==========================================
-                # ★ 永久保存单词数据
+                # 保存单词永久数据
                 # ==========================================
 
                 save_success = save_words()
 
 
                 # ==========================================
-                # ★ 更新每日统计
-                # =================================================
+                # 更新每日统计
+                # ==========================================
 
-                # 先检查日期
                 today = get_today()
+
 
                 if daily_stats.get("date") != today:
 
@@ -1422,22 +1625,31 @@ elif page == "🎯 开始练习":
                     }
 
 
-                # 答题数 +1
                 daily_stats["answered"] = (
-                    int(daily_stats.get("answered", 0)) + 1
+                    int(
+                        daily_stats.get(
+                            "answered",
+                            0
+                        )
+                    ) + 1
                 )
 
 
-                # 如果答对
                 if is_correct:
 
                     daily_stats["correct"] = (
-                        int(daily_stats.get("correct", 0)) + 1
+                        int(
+                            daily_stats.get(
+                                "correct",
+                                0
+                            )
+                        ) + 1
                     )
 
 
-                # 保存每日统计
-                save_daily_stats(daily_stats)
+                save_daily_stats(
+                    daily_stats
+                )
 
 
                 # ==========================================
@@ -1492,28 +1704,28 @@ elif page == "🎯 开始练习":
 
 
         # ====================================================
-        # 底部统计
+        # 底部每日统计
         # ====================================================
 
         st.divider()
 
 
-        # ====================================================
-        # ★ 每日统计
-        #
-        # 每天 00:00 自动重置
-        # ====================================================
-
         daily_stats = load_daily_stats()
 
 
         today_answered = int(
-            daily_stats.get("answered", 0)
+            daily_stats.get(
+                "answered",
+                0
+            )
         )
 
 
         today_correct = int(
-            daily_stats.get("correct", 0)
+            daily_stats.get(
+                "correct",
+                0
+            )
         )
 
 
@@ -1530,3 +1742,4 @@ elif page == "🎯 开始练习":
             "今日正确",
             today_correct
         )
+```
