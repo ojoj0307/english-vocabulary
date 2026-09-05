@@ -326,13 +326,5 @@
         "correct": 1,
         "wrong": 1,
         "category": "noun"
-    },
-    {
-        "english": "browser",
-        "chinese": "浏览器",
-        "weight": 3,
-        "correct": 0,
-        "wrong": 0,
-        "category": "noun"
     }
 ]
