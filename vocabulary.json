@@ -806,5 +806,189 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0
+    },
+    {
+        "english": "actually",
+        "chinese": "实际上",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "almost",
+        "chinese": "几乎",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "currently",
+        "chinese": "目前",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "definitely",
+        "chinese": "肯定",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "especially",
+        "chinese": "特别地",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "eventually",
+        "chinese": "最终",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "fairly",
+        "chinese": "相当",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "hardly",
+        "chinese": "几乎不",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "hopefully",
+        "chinese": "但愿",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "normally",
+        "chinese": "正常地",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "obviously",
+        "chinese": "明显地",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "personally",
+        "chinese": "就个人而言",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "pretty",
+        "chinese": "相当",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "quite",
+        "chinese": "相当",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "usually",
+        "chinese": "通常",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "always",
+        "chinese": "总是",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "often",
+        "chinese": "经常",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "never",
+        "chinese": "从不",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "already",
+        "chinese": "已经",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "yet",
+        "chinese": "还没",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "still",
+        "chinese": "仍然",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "just",
+        "chinese": "只是",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "probably",
+        "chinese": "大概",
+        "category": "adverb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
     }
 ]
