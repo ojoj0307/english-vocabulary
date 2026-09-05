@@ -326,5 +326,261 @@
         "correct": 1,
         "wrong": 1,
         "category": "noun"
+    },
+    {
+        "english": "discount",
+        "chinese": "打折",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "travel",
+        "chinese": "旅行",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "train",
+        "chinese": "训练",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "change",
+        "chinese": "改变",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "choose",
+        "chinese": "选",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "challenge",
+        "chinese": "挑战",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "arrive",
+        "chinese": "到达",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "exit",
+        "chinese": "出去",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "carry",
+        "chinese": "携带/搬运",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "bring",
+        "chinese": "带",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "receive",
+        "chinese": "收到",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "lend",
+        "chinese": "借出",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "borrow",
+        "chinese": "借走",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "decide",
+        "chinese": "决定",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "improve",
+        "chinese": "改善",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "practice",
+        "chinese": "练习",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "discuss",
+        "chinese": "讨论",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "solve",
+        "chinese": "解决",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "prepare",
+        "chinese": "准备",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "complete",
+        "chinese": "完成",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "continue",
+        "chinese": "继续",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "manage",
+        "chinese": "管理",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "return",
+        "chinese": "还",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "interview",
+        "chinese": "面试",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "search",
+        "chinese": "搜索",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "download",
+        "chinese": "下载",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "upload",
+        "chinese": "上传",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "allow",
+        "chinese": "允许",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "accept",
+        "chinese": "接受",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "refuse",
+        "chinese": "拒绝",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "avoid",
+        "chinese": "避免",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "reach",
+        "chinese": "到达",
+        "category": "verb",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
     }
 ]
