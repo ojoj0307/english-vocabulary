@@ -336,14 +336,6 @@
         "category": "noun"
     },
     {
-        "english": "screenshot",
-        "chinese": "截图",
-        "weight": 3,
-        "correct": 0,
-        "wrong": 0,
-        "category": "noun"
-    },
-    {
         "english": "notification",
         "chinese": "通知",
         "weight": 3,
