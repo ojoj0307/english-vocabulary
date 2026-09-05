@@ -170,62 +170,6 @@ div.stButton > button {
 
 
 /* ==========================================================
-   词库表格
-   ========================================================== */
-
-.vocab-table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    border: 1px solid rgba(128,128,128,0.25);
-    border-radius: 10px;
-}
-
-.vocab-table {
-    width: 100%;
-    min-width: 720px;
-    border-collapse: collapse;
-}
-
-.vocab-table th {
-    padding: 10px 8px;
-    text-align: left;
-    font-weight: 700;
-    border-bottom: 2px solid rgba(128,128,128,0.3);
-    white-space: nowrap;
-}
-
-.vocab-table td {
-    padding: 9px 8px;
-    border-bottom: 1px solid rgba(128,128,128,0.18);
-    white-space: nowrap;
-}
-
-.vocab-table tr:last-child td {
-    border-bottom: none;
-}
-
-.vocab-table .english {
-    font-weight: 600;
-}
-
-.vocab-table .probability {
-    font-size: 13px;
-}
-
-.sort-title {
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.mobile-hint {
-    font-size: 13px;
-    opacity: 0.65;
-    margin-bottom: 8px;
-}
-
-
-/* ==========================================================
    手机
    ========================================================== */
 
@@ -256,16 +200,6 @@ div.stButton > button {
     section[data-testid="stSidebar"]
     div[role="radiogroup"] label {
         font-size: 18px !important;
-    }
-
-    .vocab-table {
-        min-width: 720px;
-    }
-
-    .vocab-table th,
-    .vocab-table td {
-        padding: 8px 7px;
-        font-size: 13px;
     }
 
 }
@@ -564,14 +498,16 @@ def load_words():
 
         if new_sha:
 
-            github_save_file(
+            if github_save_file(
                 VOCABULARY_PATH,
                 data,
                 new_sha,
                 "Update vocabulary data structure"
-            )
+            ):
 
-            sha = new_sha
+                _, sha = github_get_file(
+                    VOCABULARY_PATH
+                )
 
     return data, sha
 
@@ -642,14 +578,16 @@ def load_daily_stats():
 
         if new_sha:
 
-            github_save_file(
+            if github_save_file(
                 DAILY_STATS_PATH,
                 data,
                 new_sha,
                 "Update daily statistics"
-            )
+            ):
 
-            sha = new_sha
+                _, sha = github_get_file(
+                    DAILY_STATS_PATH
+                )
 
     return data, sha
 
@@ -671,7 +609,9 @@ def save_words():
 
     global vocabulary_sha
 
-    _, latest_sha = github_get_file(
+    # 每次保存前重新获取最新 SHA
+    # 防止 GitHub 文件已经被其他操作更新
+    latest_content, latest_sha = github_get_file(
         VOCABULARY_PATH
     )
 
@@ -702,7 +642,7 @@ def save_daily_stats():
 
     global daily_stats_sha
 
-    _, latest_sha = github_get_file(
+    latest_content, latest_sha = github_get_file(
         DAILY_STATS_PATH
     )
 
@@ -788,7 +728,9 @@ def pronunciation_button(text, key):
     <html>
     <head>
     <meta charset="UTF-8">
+
     <style>
+
     body {{
         margin: 0;
         background: transparent;
@@ -801,7 +743,9 @@ def pronunciation_button(text, key):
         font-size: 21px;
         padding: 2px 6px;
     }}
+
     </style>
+
     </head>
 
     <body>
@@ -1248,9 +1192,11 @@ elif page == "📖 查看词库":
 
             filtered_words.append(word)
 
+
         st.caption(
             f"找到 {len(filtered_words)} 个单词"
         )
+
 
         # ====================================================
         # 排序
@@ -1340,13 +1286,11 @@ elif page == "📖 查看词库":
             unsafe_allow_html=True
         )
 
-        # ----------------------------------------------------
-        # 表头按钮
-        # ----------------------------------------------------
 
         cols = st.columns(
             [2, 2, 1.2, 0.9, 1.2, 0.8, 0.8]
         )
+
 
         def sort_label(field, text):
 
@@ -1372,6 +1316,7 @@ elif page == "📖 查看词库":
                 set_sort("english")
                 st.rerun()
 
+
         with cols[1]:
 
             if st.button(
@@ -1382,6 +1327,7 @@ elif page == "📖 查看词库":
 
                 set_sort("chinese")
                 st.rerun()
+
 
         with cols[2]:
 
@@ -1394,6 +1340,7 @@ elif page == "📖 查看词库":
                 set_sort("category")
                 st.rerun()
 
+
         with cols[3]:
 
             if st.button(
@@ -1404,6 +1351,7 @@ elif page == "📖 查看词库":
 
                 set_sort("weight")
                 st.rerun()
+
 
         with cols[4]:
 
@@ -1416,6 +1364,7 @@ elif page == "📖 查看词库":
                 set_sort("probability")
                 st.rerun()
 
+
         with cols[5]:
 
             if st.button(
@@ -1426,6 +1375,7 @@ elif page == "📖 查看词库":
 
                 set_sort("correct")
                 st.rerun()
+
 
         with cols[6]:
 
@@ -1441,6 +1391,16 @@ elif page == "📖 查看词库":
 
         # ====================================================
         # HTML 表格
+        #
+        # 这里是这次最重要的修改：
+        #
+        # 原来：
+        # st.markdown(table_html, unsafe_allow_html=True)
+        #
+        # 现在：
+        # st.components.v1.html(...)
+        #
+        # 确保 HTML 真正被浏览器渲染成表格
         # ====================================================
 
         rows = ""
@@ -1543,40 +1503,196 @@ elif page == "📖 查看词库":
 
 
         table_html = f"""
-        <div class="vocab-table-wrapper">
+        <!DOCTYPE html>
 
-            <table class="vocab-table">
+        <html>
 
-                <thead>
+        <head>
 
-                    <tr>
+        <meta charset="UTF-8">
 
-                        <th>英文</th>
-                        <th>中文</th>
-                        <th>词性</th>
-                        <th>权重</th>
-                        <th>概率</th>
-                        <th>✓</th>
-                        <th>✗</th>
+        <meta name="viewport"
+              content="width=device-width,
+                       initial-scale=1.0">
 
-                    </tr>
+        <style>
 
-                </thead>
+        * {{
+            box-sizing: border-box;
+        }}
 
-                <tbody>
+        body {{
 
-                    {rows}
+            margin: 0;
 
-                </tbody>
+            padding: 0;
 
-            </table>
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background: transparent;
+
+            color: inherit;
+
+        }}
+
+
+        .table-wrapper {{
+
+            width: 100%;
+
+            overflow-x: auto;
+
+            -webkit-overflow-scrolling: touch;
+
+            border: 1px solid
+                rgba(128,128,128,0.25);
+
+            border-radius: 10px;
+
+        }}
+
+
+        table {{
+
+            width: 100%;
+
+            min-width: 720px;
+
+            border-collapse: collapse;
+
+        }}
+
+
+        th {{
+
+            padding: 10px 8px;
+
+            text-align: left;
+
+            font-weight: 700;
+
+            border-bottom:
+                2px solid
+                rgba(128,128,128,0.3);
+
+            white-space: nowrap;
+
+        }}
+
+
+        td {{
+
+            padding: 9px 8px;
+
+            border-bottom:
+                1px solid
+                rgba(128,128,128,0.18);
+
+            white-space: nowrap;
+
+        }}
+
+
+        tr:last-child td {{
+
+            border-bottom: none;
+
+        }}
+
+
+        .english {{
+
+            font-weight: 600;
+
+        }}
+
+
+        .probability {{
+
+            font-size: 13px;
+
+        }}
+
+
+        @media (max-width: 700px) {{
+
+            th,
+            td {{
+
+                padding: 8px 7px;
+
+                font-size: 13px;
+
+            }}
+
+        }}
+
+        </style>
+
+        </head>
+
+        <body>
+
+        <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>英文</th>
+
+                    <th>中文</th>
+
+                    <th>词性</th>
+
+                    <th>权重</th>
+
+                    <th>概率</th>
+
+                    <th>✓</th>
+
+                    <th>✗</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {rows}
+
+            </tbody>
+
+        </table>
 
         </div>
+
+        </body>
+
+        </html>
         """
 
-        st.markdown(
+
+        # ====================================================
+        # 关键修改
+        # ====================================================
+
+        st.components.v1.html(
             table_html,
-            unsafe_allow_html=True
+            height=max(
+                120,
+                min(
+                    800,
+                    65 + len(filtered_words) * 44
+                )
+            ),
+            scrolling=True
         )
 
 
@@ -1617,6 +1733,7 @@ elif page == "🎯 开始练习":
             st.session_state.last_answer = ""
             st.session_state.last_correct = None
 
+
         if (
             st.session_state.current_word_index is None
             or
@@ -1631,6 +1748,7 @@ elif page == "🎯 开始练习":
                     words.index(selected_word)
                 )
 
+
         current_index = (
             st.session_state.current_word_index
         )
@@ -1641,6 +1759,7 @@ elif page == "🎯 开始练习":
             "category",
             "noun"
         )
+
 
         left, right = st.columns(
             [1, 1],
@@ -1680,6 +1799,7 @@ elif page == "🎯 开始练习":
                     "category",
                     "noun"
                 )
+
 
                 if question_type == "中译英":
 
@@ -1773,6 +1893,7 @@ elif page == "🎯 开始练习":
                         unsafe_allow_html=True
                     )
 
+
                 if st.session_state.last_correct:
 
                     st.success(
@@ -1835,6 +1956,7 @@ elif page == "🎯 开始练习":
                                 ) + 1
                             )
 
+
                         last_word["correct"] = (
                             int(
                                 last_word.get(
@@ -1864,7 +1986,9 @@ elif page == "🎯 开始练习":
                             ) - 2
                         )
 
+
                         save_words()
+
 
                         if question_type == "中译英":
 
@@ -1877,6 +2001,7 @@ elif page == "🎯 开始练习":
                             daily_stats[
                                 "en_to_cn_correct"
                             ] += 1
+
 
                         save_daily_stats()
 
@@ -1928,6 +2053,7 @@ elif page == "🎯 开始练习":
                     "current_sound"
                 )
 
+
             with st.form(
                 key="answer_form",
                 clear_on_submit=True
@@ -1945,6 +2071,7 @@ elif page == "🎯 开始练习":
                     use_container_width=True
                 )
 
+
             if submitted:
 
                 answer = answer.strip()
@@ -1956,6 +2083,7 @@ elif page == "🎯 开始练习":
                     )
 
                     st.stop()
+
 
                 if question_type == "中译英":
 
@@ -1983,6 +2111,7 @@ elif page == "🎯 开始练习":
                         .strip()
                     )
 
+
                 if user_answer == correct_answer:
 
                     if question_type == "中译英":
@@ -1993,6 +2122,7 @@ elif page == "🎯 开始练习":
 
                         word["en_to_cn_correct"] += 1
 
+
                     word["correct"] = (
                         int(
                             word.get(
@@ -2001,6 +2131,7 @@ elif page == "🎯 开始练习":
                             )
                         ) + 1
                     )
+
 
                     word["weight"] = max(
                         1,
@@ -2014,6 +2145,7 @@ elif page == "🎯 开始练习":
 
                     is_correct = True
 
+
                 else:
 
                     if question_type == "中译英":
@@ -2024,6 +2156,7 @@ elif page == "🎯 开始练习":
 
                         word["en_to_cn_wrong"] += 1
 
+
                     word["wrong"] = (
                         int(
                             word.get(
@@ -2032,6 +2165,7 @@ elif page == "🎯 开始练习":
                             )
                         ) + 1
                     )
+
 
                     word["weight"] = min(
                         20,
@@ -2045,13 +2179,16 @@ elif page == "🎯 开始练习":
 
                     is_correct = False
 
+
                 save_success = save_words()
+
 
                 today = get_today()
 
                 if daily_stats.get("date") != today:
 
                     daily_stats = default_daily_stats()
+
 
                 if question_type == "中译英":
 
@@ -2077,7 +2214,9 @@ elif page == "🎯 开始练习":
                             "en_to_cn_correct"
                         ] += 1
 
+
                 save_daily_stats()
+
 
                 st.session_state.last_word_index = (
                     current_index
@@ -2087,6 +2226,7 @@ elif page == "🎯 开始练习":
 
                 st.session_state.last_correct = is_correct
 
+
                 next_word = get_random_word()
 
                 if next_word is not None:
@@ -2094,6 +2234,7 @@ elif page == "🎯 开始练习":
                     st.session_state.current_word_index = (
                         words.index(next_word)
                     )
+
 
                 if not save_success:
 
@@ -2138,6 +2279,7 @@ elif page == "🎯 开始练习":
             )
         )
 
+
         total_answered = (
             cn_answered + en_answered
         )
@@ -2146,9 +2288,12 @@ elif page == "🎯 开始练习":
             cn_correct + en_correct
         )
 
+
         st.subheader("📊 今日统计")
 
+
         col1, col2, col3 = st.columns(3)
+
 
         col1.metric(
             "今日总答数",
@@ -2164,6 +2309,7 @@ elif page == "🎯 开始练习":
             "英译中",
             f"{en_correct} / {en_answered}"
         )
+
 
         if total_answered > 0:
 
