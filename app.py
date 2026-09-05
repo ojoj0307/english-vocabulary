@@ -79,6 +79,7 @@ st.markdown(
     max-width: 1150px;
 }
 
+
 /* ==========================================================
    标题
    ========================================================== */
@@ -178,141 +179,6 @@ div.stButton > button {
 
 
 /* ==========================================================
-   词库表格
-   ========================================================== */
-
-/*
-   重点：
-   使用 Streamlit 自己的主题变量。
-
-   --text-color
-   = 当前主题的文字颜色
-
-   --secondary-background-color
-   = 当前主题适合的次级背景颜色
-
-   这样无论电脑是浅色模式还是深色模式，
-   文字和背景都会自动保持足够的对比度。
-*/
-
-.vocab-table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-
-    border: 1px solid rgba(128,128,128,0.30);
-    border-radius: 10px;
-
-    background-color: var(--secondary-background-color);
-}
-
-
-/* ==========================================================
-   表格
-   ========================================================== */
-
-.vocab-table {
-    width: 100%;
-    min-width: 720px;
-    border-collapse: collapse;
-
-    /* 明确使用 Streamlit 当前主题文字颜色 */
-    color: var(--text-color);
-
-    /* 明确背景 */
-    background-color: var(--secondary-background-color);
-}
-
-
-/* ==========================================================
-   表头
-   ========================================================== */
-
-.vocab-table th {
-    padding: 10px 8px;
-    text-align: left;
-
-    font-weight: 700;
-
-    /* 关键：明确文字颜色 */
-    color: var(--text-color);
-
-    /* 表头稍微突出 */
-    background-color: var(--secondary-background-color);
-
-    border-bottom: 2px solid rgba(128,128,128,0.35);
-
-    white-space: nowrap;
-}
-
-
-/* ==========================================================
-   表格内容
-   ========================================================== */
-
-.vocab-table td {
-    padding: 9px 8px;
-
-    /* 关键：明确文字颜色 */
-    color: var(--text-color);
-
-    background-color: var(--secondary-background-color);
-
-    border-bottom: 1px solid rgba(128,128,128,0.20);
-
-    white-space: nowrap;
-}
-
-
-/* ==========================================================
-   鼠标经过某一行
-   ========================================================== */
-
-.vocab-table tbody tr:hover td {
-    background-color: rgba(128,128,128,0.10);
-}
-
-
-/* ==========================================================
-   最后一行
-   ========================================================== */
-
-.vocab-table tr:last-child td {
-    border-bottom: none;
-}
-
-
-/* ==========================================================
-   英文
-   ========================================================== */
-
-.vocab-table .english {
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-
-/* ==========================================================
-   概率
-   ========================================================== */
-
-.vocab-table .probability {
-    font-size: 13px;
-    color: var(--text-color);
-}
-
-
-/* ==========================================================
-   排序
-   ========================================================== */
-
-.sort-title {
-    font-size: 14px;
-    font-weight: 700;
-}
-
-
-/* ==========================================================
    手机提示
    ========================================================== */
 
@@ -354,16 +220,6 @@ div.stButton > button {
     section[data-testid="stSidebar"]
     div[role="radiogroup"] label {
         font-size: 18px !important;
-    }
-
-    .vocab-table {
-        min-width: 720px;
-    }
-
-    .vocab-table th,
-    .vocab-table td {
-        padding: 8px 7px;
-        font-size: 13px;
     }
 
 }
@@ -773,8 +629,6 @@ def save_words():
 
     global vocabulary_sha
 
-    # 每次保存前重新获取最新 SHA
-    # 防止 GitHub 文件已经被其他操作更新
     latest_content, latest_sha = github_get_file(
         VOCABULARY_PATH
     )
@@ -890,7 +744,9 @@ def pronunciation_button(text, key):
 
     html_code = f"""
     <html>
+
     <head>
+
     <meta charset="UTF-8">
 
     <style>
@@ -945,6 +801,7 @@ def pronunciation_button(text, key):
     </script>
 
     </body>
+
     </html>
     """
 
@@ -1555,16 +1412,6 @@ elif page == "📖 查看词库":
 
         # ====================================================
         # HTML 表格
-        #
-        # 这里是这次最重要的修改：
-        #
-        # 原来：
-        # st.markdown(table_html, unsafe_allow_html=True)
-        #
-        # 现在：
-        # st.components.v1.html(...)
-        #
-        # 确保 HTML 真正被浏览器渲染成表格
         # ====================================================
 
         rows = ""
@@ -1666,6 +1513,28 @@ elif page == "📖 查看词库":
             """
 
 
+        # ====================================================
+        # ★★★ 修复后的表格 HTML ★★★
+        #
+        # 关键：
+        #
+        # 不再使用：
+        # color: inherit
+        #
+        # 也不再使用：
+        # var(--text-color)
+        #
+        # 因为 iframe 内部无法可靠读取 Streamlit
+        # 的主题变量。
+        #
+        # 改成：
+        #
+        # 浅色模式 → 白底黑字
+        # 深色模式 → 深色底白字
+        #
+        # 使用 prefers-color-scheme 自动判断电脑主题。
+        # ====================================================
+
         table_html = f"""
         <!DOCTYPE html>
 
@@ -1681,28 +1550,44 @@ elif page == "📖 查看词库":
 
         <style>
 
+        /* ==================================================
+           基础
+           ================================================== */
+
         * {{
             box-sizing: border-box;
         }}
 
+
+        html,
         body {{
-
             margin: 0;
-
             padding: 0;
+            width: 100%;
+        }}
+
+
+        body {{
 
             font-family:
                 -apple-system,
                 BlinkMacSystemFont,
                 "Segoe UI",
+                Arial,
                 sans-serif;
 
-            background: transparent;
+            font-size: 14px;
 
-            color: inherit;
+            background-color: #ffffff;
+
+            color: #1f1f1f;
 
         }}
 
+
+        /* ==================================================
+           表格外框
+           ================================================== */
 
         .table-wrapper {{
 
@@ -1712,13 +1597,18 @@ elif page == "📖 查看词库":
 
             -webkit-overflow-scrolling: touch;
 
-            border: 1px solid
-                rgba(128,128,128,0.25);
+            border: 1px solid #d9d9d9;
 
             border-radius: 10px;
 
+            background-color: #ffffff;
+
         }}
 
+
+        /* ==================================================
+           表格
+           ================================================== */
 
         table {{
 
@@ -1728,8 +1618,16 @@ elif page == "📖 查看词库":
 
             border-collapse: collapse;
 
+            background-color: #ffffff;
+
+            color: #1f1f1f;
+
         }}
 
+
+        /* ==================================================
+           表头
+           ================================================== */
 
         th {{
 
@@ -1739,27 +1637,43 @@ elif page == "📖 查看词库":
 
             font-weight: 700;
 
+            color: #1f1f1f;
+
+            background-color: #f3f4f6;
+
             border-bottom:
                 2px solid
-                rgba(128,128,128,0.3);
+                #cfcfcf;
 
             white-space: nowrap;
 
         }}
 
+
+        /* ==================================================
+           内容
+           ================================================== */
 
         td {{
 
             padding: 9px 8px;
 
+            color: #1f1f1f;
+
+            background-color: #ffffff;
+
             border-bottom:
                 1px solid
-                rgba(128,128,128,0.18);
+                #e5e5e5;
 
             white-space: nowrap;
 
         }}
 
+
+        /* ==================================================
+           最后一行
+           ================================================== */
 
         tr:last-child td {{
 
@@ -1768,19 +1682,124 @@ elif page == "📖 查看词库":
         }}
 
 
+        /* ==================================================
+           鼠标经过
+           ================================================== */
+
+        tbody tr:hover td {{
+
+            background-color: #f5f5f5;
+
+        }}
+
+
+        /* ==================================================
+           英文
+           ================================================== */
+
         .english {{
 
             font-weight: 600;
 
+            color: #111111;
+
         }}
 
+
+        /* ==================================================
+           概率
+           ================================================== */
 
         .probability {{
 
             font-size: 13px;
 
+            color: #444444;
+
         }}
 
+
+        /* ==================================================
+           ★ 深色模式
+           ================================================== */
+
+        @media (prefers-color-scheme: dark) {{
+
+            body {{
+
+                background-color: #0e1117;
+
+                color: #f1f1f1;
+
+            }}
+
+
+            .table-wrapper {{
+
+                background-color: #0e1117;
+
+                border-color: #3a3f47;
+
+            }}
+
+
+            table {{
+
+                background-color: #0e1117;
+
+                color: #f1f1f1;
+
+            }}
+
+
+            th {{
+
+                color: #ffffff;
+
+                background-color: #262b33;
+
+                border-bottom-color: #4a5059;
+
+            }}
+
+
+            td {{
+
+                color: #f1f1f1;
+
+                background-color: #0e1117;
+
+                border-bottom-color: #30353d;
+
+            }}
+
+
+            tbody tr:hover td {{
+
+                background-color: #1c2128;
+
+            }}
+
+
+            .english {{
+
+                color: #ffffff;
+
+            }}
+
+
+            .probability {{
+
+                color: #d0d0d0;
+
+            }}
+
+        }}
+
+
+        /* ==================================================
+           手机
+           ================================================== */
 
         @media (max-width: 700px) {{
 
@@ -1844,7 +1863,7 @@ elif page == "📖 查看词库":
 
 
         # ====================================================
-        # 关键修改
+        # 显示表格
         # ====================================================
 
         st.components.v1.html(
