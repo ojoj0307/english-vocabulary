@@ -5,7 +5,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "career",
@@ -13,7 +17,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "experience",
@@ -21,7 +29,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "information",
@@ -29,7 +41,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "receipt",
@@ -37,7 +53,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "salary",
@@ -45,7 +65,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "salt",
@@ -53,7 +77,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "belly",
@@ -61,7 +89,11 @@
         "weight": 5,
         "correct": 0,
         "wrong": 1,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 1,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "adult",
@@ -69,7 +101,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "hundred",
@@ -77,7 +113,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "thousand",
@@ -85,7 +125,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "million",
@@ -93,7 +137,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "minute",
@@ -101,7 +149,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "second",
@@ -109,7 +161,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "choice",
@@ -117,7 +173,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "monday",
@@ -125,7 +185,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "tuesday",
@@ -133,7 +197,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "wednesday",
@@ -141,7 +209,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "thursday",
@@ -149,7 +221,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "friday",
@@ -157,7 +233,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "saturday",
@@ -165,7 +245,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "sunday",
@@ -173,7 +257,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "january",
@@ -181,7 +269,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "february",
@@ -189,7 +281,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "march",
@@ -197,7 +293,11 @@
         "weight": 2,
         "correct": 1,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 1,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "april",
@@ -205,7 +305,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "may",
@@ -213,7 +317,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "june",
@@ -221,7 +329,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "july",
@@ -229,7 +341,11 @@
         "weight": 2,
         "correct": 1,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 1,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "august",
@@ -237,7 +353,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "september",
@@ -245,7 +365,11 @@
         "weight": 5,
         "correct": 0,
         "wrong": 1,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 1,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "october",
@@ -253,7 +377,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "november",
@@ -261,7 +389,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "december",
@@ -269,7 +401,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "research",
@@ -277,7 +413,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "interview",
@@ -285,7 +425,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "deadline",
@@ -293,7 +437,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "opportunity",
@@ -301,7 +449,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "account",
@@ -309,7 +461,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "profile",
@@ -317,7 +473,11 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "website",
@@ -325,7 +485,11 @@
         "weight": 4,
         "correct": 1,
         "wrong": 1,
-        "category": "noun"
+        "category": "noun",
+        "cn_to_en_correct": 1,
+        "cn_to_en_wrong": 1,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "discount",
@@ -333,7 +497,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "travel",
@@ -341,7 +509,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "train",
@@ -349,7 +521,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "change",
@@ -357,7 +533,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "choose",
@@ -365,7 +545,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "challenge",
@@ -373,7 +557,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "arrive",
@@ -381,7 +569,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "exit",
@@ -389,7 +581,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "carry",
@@ -397,7 +593,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "bring",
@@ -405,7 +605,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "receive",
@@ -413,7 +617,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "lend",
@@ -421,7 +629,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "borrow",
@@ -429,7 +641,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "decide",
@@ -437,7 +653,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "improve",
@@ -445,7 +665,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "practice",
@@ -453,7 +677,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "discuss",
@@ -461,7 +689,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "solve",
@@ -469,7 +701,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "prepare",
@@ -477,7 +713,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "complete",
@@ -485,7 +725,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "continue",
@@ -493,7 +737,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "manage",
@@ -501,7 +749,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "return",
@@ -509,7 +761,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "interview",
@@ -517,7 +773,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "search",
@@ -525,7 +785,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "download",
@@ -533,7 +797,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "upload",
@@ -541,7 +809,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "allow",
@@ -549,7 +821,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "accept",
@@ -557,7 +833,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "refuse",
@@ -565,7 +845,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "avoid",
@@ -573,7 +857,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "reach",
@@ -581,7 +869,11 @@
         "category": "verb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "difficult",
@@ -589,7 +881,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "dirty",
@@ -597,7 +893,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "necessary",
@@ -605,7 +905,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "ugly",
@@ -613,7 +917,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "excited",
@@ -621,7 +929,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "tired",
@@ -629,7 +941,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "bored",
@@ -637,7 +953,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "stressed",
@@ -645,7 +965,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "scared",
@@ -653,7 +977,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "nervous",
@@ -661,7 +989,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "surprised",
@@ -669,7 +1001,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "confused",
@@ -677,7 +1013,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "weak",
@@ -685,7 +1025,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "serious",
@@ -693,7 +1037,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "honest",
@@ -701,7 +1049,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "lazy",
@@ -709,7 +1061,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "polite",
@@ -717,7 +1073,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "first",
@@ -725,7 +1085,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "second",
@@ -733,7 +1097,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "third",
@@ -741,7 +1109,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "hungry",
@@ -749,7 +1121,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "thirsty",
@@ -757,7 +1133,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "sleepy",
@@ -765,7 +1145,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "sick",
@@ -773,7 +1157,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "healthy",
@@ -781,7 +1169,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "dizzy",
@@ -789,7 +1181,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "painful",
@@ -797,7 +1193,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "comfortable",
@@ -805,7 +1205,11 @@
         "category": "adjective",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "actually",
@@ -813,7 +1217,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "almost",
@@ -821,7 +1229,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "currently",
@@ -829,7 +1241,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "definitely",
@@ -837,7 +1253,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "especially",
@@ -845,7 +1265,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "eventually",
@@ -853,7 +1277,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "fairly",
@@ -861,7 +1289,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "hardly",
@@ -869,7 +1301,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "hopefully",
@@ -877,7 +1313,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "normally",
@@ -885,7 +1325,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "obviously",
@@ -893,7 +1337,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "personally",
@@ -901,7 +1349,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "pretty",
@@ -909,7 +1361,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "quite",
@@ -917,7 +1373,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "usually",
@@ -925,7 +1385,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "always",
@@ -933,7 +1397,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "often",
@@ -941,7 +1409,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "never",
@@ -949,7 +1421,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "already",
@@ -957,7 +1433,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "yet",
@@ -965,7 +1445,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "still",
@@ -973,7 +1457,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "just",
@@ -981,7 +1469,11 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     },
     {
         "english": "probably",
@@ -989,6 +1481,10 @@
         "category": "adverb",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "cn_to_en_correct": 0,
+        "cn_to_en_wrong": 0,
+        "en_to_cn_correct": 0,
+        "en_to_cn_wrong": 0
     }
 ]
