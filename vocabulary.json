@@ -4,307 +4,351 @@
         "chinese": "申请",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "career",
         "chinese": "职业",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "experience",
         "chinese": "经验",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "information",
         "chinese": "信息",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "receipt",
         "chinese": "收据",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "salary",
         "chinese": "薪水",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "salt",
         "chinese": "盐",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "belly",
         "chinese": "肚子",
         "weight": 5,
         "correct": 0,
-        "wrong": 1
+        "wrong": 1,
+        "category": "noun"
     },
     {
         "english": "adult",
         "chinese": "成年人",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "hundred",
         "chinese": "百",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "thousand",
         "chinese": "千",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "million",
         "chinese": "百万",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "minute",
         "chinese": "分钟",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "second",
         "chinese": "秒",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "choice",
         "chinese": "选择",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "monday",
         "chinese": "星期一",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "tuesday",
         "chinese": "星期二",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "wednesday",
         "chinese": "星期三",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "thursday",
         "chinese": "星期四",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "friday",
         "chinese": "星期五",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "saturday",
         "chinese": "星期六",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "sunday",
         "chinese": "星期日",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "january",
         "chinese": "一月",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "february",
         "chinese": "二月",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "march",
         "chinese": "三月",
         "weight": 2,
         "correct": 1,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "april",
         "chinese": "四月",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "may",
         "chinese": "五月",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "june",
         "chinese": "六月",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "july",
         "chinese": "七月",
         "weight": 2,
         "correct": 1,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "august",
         "chinese": "八月",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "september",
         "chinese": "九月",
         "weight": 5,
         "correct": 0,
-        "wrong": 1
+        "wrong": 1,
+        "category": "noun"
     },
     {
         "english": "october",
         "chinese": "十月",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "november",
         "chinese": "十一月",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "december",
         "chinese": "十二月",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "research",
         "chinese": "研究",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "interview",
         "chinese": "面试",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "deadline",
         "chinese": "截止日期",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "opportunity",
         "chinese": "机会",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "account",
         "chinese": "账号",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "profile",
         "chinese": "个人资料",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "website",
         "chinese": "网站",
         "weight": 4,
         "correct": 1,
-        "wrong": 1
+        "wrong": 1,
+        "category": "noun"
     },
     {
         "english": "browser",
         "chinese": "浏览器",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "screenshot",
         "chinese": "截图",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     },
     {
         "english": "notification",
         "chinese": "通知",
         "weight": 3,
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "category": "noun"
     }
 ]
