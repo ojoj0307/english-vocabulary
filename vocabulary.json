@@ -582,5 +582,229 @@
         "weight": 3,
         "correct": 0,
         "wrong": 0
+    },
+    {
+        "english": "difficult",
+        "chinese": "困难的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "dirty",
+        "chinese": "脏的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "necessary",
+        "chinese": "必须的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "ugly",
+        "chinese": "难看的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "excited",
+        "chinese": "兴奋的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "tired",
+        "chinese": "疲倦的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "bored",
+        "chinese": "无聊的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "stressed",
+        "chinese": "有压力的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "scared",
+        "chinese": "害怕的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "nervous",
+        "chinese": "紧张的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "surprised",
+        "chinese": "惊讶的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "confused",
+        "chinese": "困惑的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "weak",
+        "chinese": "虚弱的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "serious",
+        "chinese": "严肃的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "honest",
+        "chinese": "诚实的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "lazy",
+        "chinese": "懒惰的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "polite",
+        "chinese": "礼貌的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "first",
+        "chinese": "第一的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "second",
+        "chinese": "第二的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "third",
+        "chinese": "第三的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "hungry",
+        "chinese": "饿的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "thirsty",
+        "chinese": "渴的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "sleepy",
+        "chinese": "困的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "sick",
+        "chinese": "生病的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "healthy",
+        "chinese": "健康的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "dizzy",
+        "chinese": "头晕的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "painful",
+        "chinese": "疼痛的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
+    },
+    {
+        "english": "comfortable",
+        "chinese": "舒服的",
+        "category": "adjective",
+        "weight": 3,
+        "correct": 0,
+        "wrong": 0
     }
 ]
