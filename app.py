@@ -1,4 +1,3 @@
-```python
 import streamlit as st
 import json
 import random
@@ -2797,4 +2796,3 @@ elif page == "🎯 开始练习":
             st.caption(
                 f"今日总正确率：{accuracy:.1f}%"
             )
-```
